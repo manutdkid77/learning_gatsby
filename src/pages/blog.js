@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Container from "../components/container"
 
 export default ({ data }) => {
@@ -11,8 +11,12 @@ export default ({ data }) => {
                     return (
                         <div key={node.id}>
                             <hr />
-                            <p><b>{node.excerpt}</b></p>
-                            <p>{node.frontmatter.author} - {node.frontmatter.date}</p>
+                            <div>
+                                <Link to={node.fields.slug}>
+                                    <p><b>{node.excerpt}</b></p>
+                                    <p>{node.frontmatter.author} - {node.frontmatter.date}</p>
+                                </Link>
+                            </div>
                         </div>
                     )
                 })
@@ -33,6 +37,9 @@ query {
                   author
                 }
                 excerpt
+                fields {
+                    slug
+                }
               }
             }
         totalCount
