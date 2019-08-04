@@ -20,3 +20,7 @@ I will be following this [awesome tutorial](https://www.gatsbyjs.org/tutorial/) 
 2.  **Open the source code and start editing!**
 
     Your site is now running at `http://localhost:8000`
+
+3. **Create and fiddle around with GraphQL queries using the GraphiQL Explorer**
+
+    The GraphiQL Explorer runs on `http://localhost:8000/___graphql?`
